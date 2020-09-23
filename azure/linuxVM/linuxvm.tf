@@ -2,31 +2,31 @@
 # Create a Linux VM 
 #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*
 
-#
-# - Terraform Block
-#
+// #
+// # - Terraform Block
+// #
 
-terraform {
-    required_providers {
-        azurerm = {
-            version =   ">= 2.20"
-            source  =   "hashicorp/azurerm"
-        }
-    }
-}
+// terraform {
+//     required_providers {
+//         azurerm = {
+//             version =   ">= 2.20"
+//             source  =   "hashicorp/azurerm"
+//         }
+//     }
+// }
 
-#
-# - Provider Block
-#
+// #
+// # - Provider Block
+// #
 
-provider "azurerm" {
-    client_id       =   var.client_id
-    client_secret   =   var.client_secret
-    subscription_id =   var.subscription_id
-    tenant_id       =   var.tenant_id
+// provider "azurerm" {
+//     client_id       =   var.client_id
+//     client_secret   =   var.client_secret
+//     subscription_id =   var.subscription_id
+//     tenant_id       =   var.tenant_id
     
-    features {}
-}
+//     features {}
+// }
 
 
 #

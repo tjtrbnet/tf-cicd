@@ -16,7 +16,7 @@ terraform {
 # Provider Block
 
 provider "azurerm" {
-    version         =   ">= 2.20"
+    version         =   ">= 2.26"
     client_id       =   var.client_id
     client_secret   =   var.client_secret
     subscription_id =   var.subscription_id
@@ -50,7 +50,7 @@ provider "azuread" {
 //     source  =   "./azure/provisioners-example"
 // }
 
-// module "linuxvm" {
-//     source  =   "./azure/linuxVM"
-// }
+module "linuxvm" {
+    source  =   "./azure/linuxVM"
+}
 
