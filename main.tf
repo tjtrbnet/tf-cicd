@@ -39,7 +39,8 @@ provider "azuread" {
 }
 
 module "aks" {
-    source    = "./azure/aks"
+    source    =     "./azure/aks"
+    env       =     "dev"
 }
 
 // module "winvm" {
