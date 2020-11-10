@@ -38,6 +38,10 @@ provider "azuread" {
     alias           =   "ad"
 }
 
+module "aks" {
+    source    = "./azure/aks"
+}
+
 // module "winvm" {
 //     source = "./azure/windowsVM"
 // }
@@ -50,7 +54,7 @@ provider "azuread" {
 //     source  =   "./azure/provisioners-example"
 // }
 
-module "linuxvm" {
-    source  =   "./azure/linuxVM"
-}
+// module "linuxvm" {
+//     source  =   "./azure/linuxVM"
+// }
 
