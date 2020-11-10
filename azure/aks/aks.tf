@@ -17,7 +17,6 @@ resource "azurerm_resource_group" "rg" {
 #
 
 resource "azuread_group" "aks_admins" {
-  provider               =   azuread.ad
   name                   =   "${var.env}-aks-administrators"
   description            =   "Kubernetes administrators"
 }
@@ -33,7 +32,7 @@ data "azurerm_kubernetes_service_versions" "current" {
 
 resource "azurerm_kubernetes_cluster" "aks" {
    name                  =    "${var.env}-aks-cluster"
-   resource_group_name   =    azurerm_resource_group_name.rg.name
+   resource_group_name   =    azurerm_resource_group.rg.name
    location              =    azurerm_resource_group.rg.location     
    dns_prefix            =    "${var.env}-aks-cluster"
    kubernetes_version    =    data.azurerm_kubernetes_service_versions.current.latest_version
