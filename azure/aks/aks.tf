@@ -39,10 +39,11 @@ resource "azurerm_kubernetes_cluster" "aks" {
    node_resource_group   =    "${azurerm_resource_group.rg.name}-nodes-rg"
    
    default_node_pool {
-    name                 =    "aksnodes"
+    name                 =    "aksnode"
     orchestrator_version =    data.azurerm_kubernetes_service_versions.current.latest_version
-    os_disk_size_gb      =    1024
+    os_disk_size_gb      =    30
     vm_size              =    "Standard_DS2_v2"
+    node_count           =    1
   }
 
   identity { 
