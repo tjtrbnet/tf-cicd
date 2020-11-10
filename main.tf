@@ -37,10 +37,10 @@ provider "azuread" {
     alias           =   "ad"
 }
 
-module "aks" {
-    source    =     "./azure/aks"
-    env       =     "dev"
-}
+// module "aks" {
+//     source    =     "./azure/aks"
+//     env       =     "dev"
+// }
 
 // module "winvm" {
 //     source = "./azure/windowsVM"
