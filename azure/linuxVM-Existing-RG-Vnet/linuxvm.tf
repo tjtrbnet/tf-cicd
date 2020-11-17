@@ -29,7 +29,7 @@ data "azurerm_subnet" "web" {
 #    location                        =     data.azurerm_resource_group.rg.location
 #    allocation_method               =     var.allocation_method[0]
 #    tags                            =     var.tags
-}
+# }
 
 #
 # - Create a Network Interface Card for Virtual Machine
