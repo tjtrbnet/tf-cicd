@@ -55,6 +55,6 @@ provider "azuread" {
 // }
 
 module "linuxvm" {
-    source  =   "./azure/linuxVM"
+    source  =   "./azure/linuxVM-Existing-RG-Vnet"
 }
 
