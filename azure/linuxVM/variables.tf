@@ -36,7 +36,7 @@ variable "tags" {
     description =   "Resouce tags"
     type        =   map(string)
     default     =   {
-        "author"        =   "Vamsi"
+        "author"        =   "TJ"
         "deployed_with" =   "Terraform"
     }
 }
@@ -46,7 +46,7 @@ variable "tags" {
 variable "location" {
     description =   "Location of the resource group"
     type        =   string
-    default     =   "East US"
+    default     =   "Australia Southeast"
 }
 
 # Vnet and Subnet
