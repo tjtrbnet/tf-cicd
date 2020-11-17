@@ -65,7 +65,7 @@ resource "azurerm_linux_virtual_machine" "vm" {
     
      admin_ssh_key {
     username   = "adminuser"
-    public_key = file("~/.ssh/dev_rsa.pub")
+    public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC1aA4Ye0qo6mY4cIFLbqvYBtWfKB5Y/MDC6jB3Jt0gfiwsoxj6HCGNSMj40ZZ5C/35aC5D+YU8uTLQz2KxlToVYtOiCRIuBzYfdNrPkTILa2P83V5KWHjmmKk+P5Mo6j6iUr0MuJwMdL5ufRwQ2/fI6hseLqGT8n2b9rvLkVIb8kFwGIWOTwsmNzBFgCz+mpGnywxxPU9ULobuZgLRKXvTLQdfvbiRg+uURo/5P/HIXppCcjcE6+WEHQAYCgIPF+VAJT1I/epdcrzaYjtoNMBkwBadaSzdqURvIp3h3ENVd9ohiCaL7f/uf67gIS2kNphcTy4jRDYi7q4e3xmDlhAh"
   }
 
     os_disk  {
