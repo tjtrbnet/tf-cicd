@@ -23,13 +23,13 @@ data "azurerm_subnet" "web" {
 # - Public IP (To Login to Linux VM)
 #
 
-# resource "azurerm_public_ip" "pip" {
-#    name                            =     "linuxvm-public-ip"
-#    resource_group_name             =     data.azurerm_resource_group.rg.name
-#    location                        =     data.azurerm_resource_group.rg.location
-#    allocation_method               =     var.allocation_method[0]
-#    tags                            =     var.tags
-# }
+ resource "azurerm_public_ip" "pip" {
+    name                            =     "linuxvm-public-ip"
+    resource_group_name             =     data.azurerm_resource_group.rg.name
+    location                        =     data.azurerm_resource_group.rg.location
+    allocation_method               =     var.allocation_method[0]
+    tags                            =     var.tags
+ }
 
 #
 # - Create a Network Interface Card for Virtual Machine
@@ -43,8 +43,8 @@ resource "azurerm_network_interface" "nic" {
     ip_configuration                  {
         name                          =  "linux-nic-ipconfig"
         subnet_id                     =   data.azurerm_subnet.web.id
-#        public_ip_address_id          =   azurerm_public_ip.pip.id
-#        private_ip_address_allocation =   var.allocation_method[1]
+        public_ip_address_id          =   azurerm_public_ip.pip.id
+        private_ip_address_allocation =   var.allocation_method[1]
     }
 }
 
