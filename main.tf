@@ -54,7 +54,7 @@ provider "azuread" {
 //     source  =   "./azure/provisioners-example"
 // }
 
-// module "linuxvm" {
-//     source  =   "./azure/linuxVM"
-// }
+module "linuxvm" {
+    source  =   "./azure/linuxVM"
+}
 
