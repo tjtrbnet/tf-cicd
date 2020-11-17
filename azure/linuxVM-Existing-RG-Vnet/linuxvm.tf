@@ -48,6 +48,13 @@ resource "azurerm_network_interface" "nic" {
     }
 }
 
+# Create (and display) an SSH key
+resource "tls_private_key" "example_ssh" {
+  algorithm = "RSA"
+  rsa_bits = 4096
+}
+output "tls_private_key" { value = tls_private_key.example_ssh.private_key_pem }
+
 
 #
 # - Create a Linux Virtual Machine
@@ -61,8 +68,13 @@ resource "azurerm_linux_virtual_machine" "vm" {
     size                              =   var.virtual_machine_size
     computer_name                     =   var.computer_name
     admin_username                    =   var.admin_username
-    admin_password                    =   var.admin_password
-    disable_password_authentication   =   false
+  # admin_password                    =   var.admin_password
+    disable_password_authentication   =   true
+    
+    admin_ssh_key {
+        username       = "azureuser"
+        public_key     = tls_private_key.example_ssh.public_key_openssh
+    }
 
     os_disk  {
         name                          =   "linuxvm-os-disk"
